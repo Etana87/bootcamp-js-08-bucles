@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const pacientes_1 = require("./pacientes");
+const operaciones_1 = require("./operaciones");
+console.log("Pacientes en Pediatría:");
+const soloPediatria = (0, operaciones_1.obtenPacientesAsignadosAPediatria)(pacientes_1.pacientes);
+console.log(soloPediatria);
+console.log("\nPacientes en Pediatría menores de 10 años:");
+const menoresDe10 = (0, operaciones_1.obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios)(pacientes_1.pacientes);
+console.log(menoresDe10);
