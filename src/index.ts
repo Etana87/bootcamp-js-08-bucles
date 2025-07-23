@@ -4,7 +4,8 @@ import {
   obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios,
   activarProtocoloUrgencia,
   reasignaPacientesAMedicoFamilia,
-  HayPacientesDePediatria
+  HayPacientesDePediatria,
+  cuentaPacientesPorEspecialidad
 } from "./operaciones";
 
 //Pacientes
@@ -30,7 +31,14 @@ for (let i = 0; i < pacientesReasignados.length; i++) {
   );
 }
 
-//Hay pacientesen pediatría
+//Hay pacientes en pediatría
 const hayPediatria = HayPacientesDePediatria(pacientes);
 console.log("\n¿Hay pacientes asignados a Pediatría?:", hayPediatria ? "Sí" : "No");
+
+//No total de pacientes en Médico de familia, pediatría y cardiología
+const conteoEspecialidades = cuentaPacientesPorEspecialidad(pacientes);
+console.log("\nNúmero de pacientes por especialidad:");
+console.log("Médico de familia:", conteoEspecialidades.medicoDeFamilia);
+console.log("Pediatría:", conteoEspecialidades.pediatria);
+console.log("Cardiología:", conteoEspecialidades.cardiologia);
 
